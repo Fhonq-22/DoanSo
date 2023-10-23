@@ -27,7 +27,7 @@
     background-color: var(--vang);
 }
 
-#so_doan_input, #so_doan_submit {
+#so_doan_input, #so_doan_submit, #xoa_so {
     margin: 5px;
     font-size: 20px;
     font-weight: bold;
