@@ -60,6 +60,28 @@ document.addEventListener("DOMContentLoaded", function () {
         LamMoi();
     });
 
+    const xoaSoButton = document.querySelector("#xoa_so");
+    xoaSoButton.addEventListener("click", () => {
+        const currentInput = soDoanInput.value;
+        
+        // Kiểm tra xem có chữ số để xoá hay không
+        if (currentInput.length > 0) {
+            // Lấy chữ số cuối cùng và loại bỏ nó khỏi chuỗi
+            const lastChar = currentInput.charAt(currentInput.length - 1);
+            const updatedInput = currentInput.slice(0, -1);
+
+            // Khôi phục phím tương ứng
+            const correspondingButton = document.getElementById(`so_${lastChar}`);
+            correspondingButton.style.pointerEvents = "auto";
+            correspondingButton.disabled = false;
+            correspondingButton.classList.remove("disabled");
+
+            // Cập nhật giá trị trên input
+            soDoanInput.value = updatedInput;
+        }
+    });
+
+
     function taoMucTieu() {
         let mucTieu;
         do {
