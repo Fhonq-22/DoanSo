@@ -112,7 +112,7 @@
 }
 
 /* Sử dụng media query để điều chỉnh giao diện cho màn hình điện thoại */
-@media (max-width: 768px) {
+@media (max-width: 450px) {
     .container {
         flex-direction: column; /* Hiển thị hàng dọc trên màn hình điện thoại */
     }
