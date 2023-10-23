@@ -1,0 +1,112 @@
+:root{
+    --xanh: #A8E6CF;
+    --vang: #FDFFAB;
+    --cam: #FFD3B6;
+    --do: #FFAAA5;
+}
+
+*{
+    text-align: center;
+    background-color: var(--xanh);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Canh lề ngang theo giữa trang */
+    align-items: center; /* Canh lề dọc theo giữa trang */
+    text-align: center;
+}
+
+#trai {
+    width: 300px;
+    padding: 4px;
+    border: 2px solid var(--xanh);
+    border-radius: 8px;
+    box-shadow: var(--vang) 0px 0px 8px 8px;;
+    background-color: var(--vang);
+}
+
+#so_doan_input, #so_doan_submit {
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px ;
+    border: 1px solid var(--do);
+    box-shadow: var(--cam) 0px 0px 8px 2px;
+    background-color: var(--cam);
+}
+
+#hang_phim_0_4, #hang_phim_5_9 {
+    display: flex;
+    justify-content: center;
+    background-color: var(--vang);
+}
+
+.so_vuong {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 50px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 8px ;
+    border: 1px solid var(--do);
+    box-shadow: var(--cam) 0px 0px 8px 2px;
+    background-color: var(--cam);
+}
+
+.so_vuong:hover {
+    background-color: var(--do);
+    box-shadow: var(--do) 0px 0px 4px 2px;
+}
+
+.so_vuong.disabled {
+    box-shadow: var(--xanh) 0px 0px 4px 2px;
+    border: 1px solid var(--xanh);
+    background-color: var(--xanh);
+}
+
+
+#phai{
+    width: 300px;
+    padding: 4px;
+    margin-left: 50px;
+    border: 1px solid black;
+    border-radius: 8px;
+    font-size: 20px;
+    border: 2px solid var(--do);
+    box-shadow: var(--cam) 0px 0px 8px 8px;;
+    background-color: var(--cam);
+}
+
+#phai p, #ket_qua{
+    font-weight: bold;
+    margin: 10px 30px;
+    padding: 2px;
+    border-radius: 10px;
+    border: 2px solid var(--do);
+}
+
+#so_chu_so_dung {
+    color: blue;
+}
+
+#so_chu_so_dung_vi_tri {
+    color: green;
+}
+
+#ket_qua {
+    color: blue;
+}
+
+#lichsu_doan{
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+    border: 2px dashed var(--do);
+    border-radius: 4px;
+    background-color: var(--vang);
+}

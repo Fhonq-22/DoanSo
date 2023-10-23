@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <title>Trò chơi đoán số</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Trò chơi đoán số</h1>
+    <p>Mục tiêu của bạn là một số có 4 chữ số và không có chữ số nào lặp lại (đoán tối đa 10 lần).</p>
+    
+    <div class="container">
+        <div id="trai">
+            <input type="text" id="so_doan_input" placeholder="Nhập số đoán|" disabled="true">
+            <div id="hang_phim_0_4">
+                <div class="so_vuong" id="so_0">0</div>
+                <div class="so_vuong" id="so_1">1</div>
+                <div class="so_vuong" id="so_2">2</div>
+                <div class="so_vuong" id="so_3">3</div>
+                <div class="so_vuong" id="so_4">4</div>
+            </div>
+            <div id="hang_phim_5_9">
+                <div class="so_vuong" id="so_5">5</div>
+                <div class="so_vuong" id="so_6">6</div>
+                <div class="so_vuong" id="so_7">7</div>
+                <div class="so_vuong" id="so_8">8</div>
+                <div class="so_vuong" id="so_9">9</div>
+            </div>
+            <button id="so_doan_submit">Kiểm tra</button>
+        </div>
+
+        <div id="phai">
+            <p>Số chữ số đúng: <span id="so_chu_so_dung"></span></p>
+            <p>Số chữ số đúng vị trí: <span id="so_chu_so_dung_vi_tri"></span></p>
+            <div id="ket_qua"></div>
+            <textarea id="lichsu_doan" rows="10" cols="30" readonly></textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
