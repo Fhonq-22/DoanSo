@@ -8,14 +8,20 @@ document.addEventListener("DOMContentLoaded", function () {
     let lichSuDoan = "";
     let doanCount = 0;
 
+    // Tạo đối tượng âm thanh
+    const pop = new Audio(`sounds/pop.wav`);
+    const sai = new Audio(`sounds/sai.mp3`);
+    const chinhxac = new Audio(`sounds/chinhxac.ogg`);
+    
     const soVuongs = document.querySelectorAll(".so_vuong");
-
     soVuongs.forEach((soVuong) => {
         soVuong.addEventListener("click", () => {
             if (doanCount >= soLanDoanMAX) {
+                sai.play(); // Phát âm thanh
                 alert("Bạn đã hoàn thành "+soLanDoanMAX+" lần đoán.");
                 return;
             }
+            pop.play(); // Phát âm thanh
             const so = soVuong.textContent;
             soDoanInput.value += so;
             soVuong.style.pointerEvents = "none";
@@ -26,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     soDoanSubmit.addEventListener("click", (event) => {
         if (doanCount >= soLanDoanMAX) {
+            sai.play(); // Phát âm thanh
             alert("Bạn đã hoàn thành "+soLanDoanMAX+" lần đoán.");
             soDoanSubmit.disabled = true;
             return;
@@ -33,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const soDoan = soDoanInput.value;
         if (soDoan.length !== 4) {
+            sai.play(); // Phát âm thanh
             alert("Số đoán phải có 4 chữ số!");
             LamMoi();
             return;
@@ -50,12 +58,14 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("so_chu_so_dung_vi_tri").innerHTML = `<span>${soChuSoDungViTri}</span>`;
 
         if (soChuSoDungViTri === 4) {
+            chinhxac.play(); // Phát âm thanh
             document.getElementById("ket_qua").innerHTML = `<span style="color: green;">Bingo! Mục tiêu là: ${mucTieu}</span>`;
             soDoanSubmit.disabled = true;
         } else if (doanCount >= soLanDoanMAX) {
+            sai.play(); // Phát âm thanh
             document.getElementById("ket_qua").innerHTML = `<span style="color: red;">Bạn đã hết lượt đoán. Mục tiêu là: ${mucTieu}</span>`;
             soDoanSubmit.disabled = true;
-        }
+        }else{sai.play();}
 
         LamMoi();
     });
@@ -66,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Kiểm tra xem có chữ số để xoá hay không
         if (currentInput.length > 0) {
+            pop.play(); // Phát âm thanh
             // Lấy chữ số cuối cùng và loại bỏ nó khỏi chuỗi
             const lastChar = currentInput.charAt(currentInput.length - 1);
             const updatedInput = currentInput.slice(0, -1);
